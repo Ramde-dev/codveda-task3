@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Product dashboard with CRUD operations using a REST API.">
+    <title>Codveda Product Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Product Dashboard</h1>
+            <p>Manage products using our REST API.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="products-section">
+            <div class="section-heading">
+                <div>
+                    <h2>Our Products</h2>
+                    <p>Add, view, edit and delete products.</p>
+                </div>
+
+                <button id="refresh-btn" type="button">
+                    Refresh Products
+                </button>
+            </div>
+
+            <p id="status-message" role="status" aria-live="polite">
+                Loading products...
+            </p>
+
+            <section class="form-section">
+                <h2 id="form-title">Add a New Product</h2>
+
+                <form id="product-form">
+                    <div class="form-group">
+                        <label for="product-name">Product Name</label>
+                        <input
+                            type="text"
+                            id="product-name"
+                            name="name"
+                            placeholder="Enter product name"
+                            maxlength="100"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="product-price">Price (TZS)</label>
+                        <input
+                            type="number"
+                            id="product-price"
+                            name="price"
+                            placeholder="Enter product price"
+                            min="0"
+                            step="any"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-actions">
+                        <button id="submit-btn" type="submit">
+                            Add Product
+                        </button>
+
+                        <button
+                            id="cancel-edit-btn"
+                            class="secondary-button"
+                            type="button"
+                            hidden
+                        >
+                            Cancel Edit
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="list-section">
+                <h2>Product List</h2>
+
+                <div id="products-container" class="products-grid">
+                    <!-- Product cards are rendered by JavaScript. -->
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Built by Ramadhani | Codveda Internship Task 3</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
